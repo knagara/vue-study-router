@@ -6,8 +6,8 @@
         <hr>
         <!-- <h3>User No. {{ $route.params.id }}</h3> -->
         <h3>User No. {{ id }}</h3>
-        <router-link :to="'/users/' + (Number(id) + 1) + '/profile'">Next user</router-link>
-        <router-link :to="{ name: 'users-id-profile', params: { id: Number(id) + 1} }">Next user</router-link>
+        <router-link :to="'/users/' + (Number(id) + 1) + '/profile?lang=ja'">Next user</router-link>
+        <router-link :to="{ name: 'users-id-profile', params: { id: Number(id) + 1}, query: { lang: 'ja', page: 2}}">Next user</router-link>
         <router-view></router-view>
     </div>
 </template>
