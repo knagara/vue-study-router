@@ -1,15 +1,19 @@
 <template>
   <div>
-    <nav>
-      <router-link to="/" active-class="link--active" exact>Home</router-link>
-      <router-link to="/users/1" active-class="link--active" exact>Users</router-link>
-    </nav>
-    <router-view></router-view>
+    <router-view name="header"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <style scoped>
-  .link--active {
-    color: red;
-  }
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
 </style>
